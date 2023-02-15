@@ -167,22 +167,22 @@ class _NumberPickerState extends State<NumberPicker> {
           children: [
             if (widget.infiniteLoop)
               InfiniteListView.builder(
-                physics: BouncingScrollPhysics(),
                 scrollDirection: widget.axis,
                 controller: _scrollController as InfiniteScrollController,
                 itemExtent: itemExtent,
                 itemBuilder: _itemBuilder,
                 padding: EdgeInsets.zero,
+                physics: BouncingScrollPhysics(),
               )
             else
               ListView.builder(
-                physics: BouncingScrollPhysics(),
                 itemCount: listItemsCount,
                 scrollDirection: widget.axis,
                 controller: _scrollController,
                 itemExtent: itemExtent,
                 itemBuilder: _itemBuilder,
                 padding: EdgeInsets.zero,
+                physics: BouncingScrollPhysics(),
               ),
             _NumberPickerSelectedItemDecoration(
               axis: widget.axis,
